@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #00B5FF;
+    --background-dark: #181A20;
+    --background-light: #232634;
+    --card-bg: #232634;
+    --card-shadow: rgba(0,0,0,0.25);
+    --accent: #FFD700;
+    --text-main: #F8F8F8;
+    --text-muted: #A0A0A0;
+    --winner-bg: rgba(0, 181, 255, 0.08);
+    --loser-bg: rgba(255, 50, 50, 0.08);
+  }
+  
+  body {
+    background: var(--background-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+  }
+  
+  .App {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 16px 16px 16px;
+  }
+  
+  .main-content {
+    margin-top: 32px;
+  }
+  

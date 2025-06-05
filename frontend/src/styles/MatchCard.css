@@ -1,0 +1,127 @@
+.match-card {
+    background: #232634;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    padding: 28px 22px;
+    margin-bottom: 0;
+    border: 1.5px solid #222;
+    width: 100%;
+    max-width: 600px; 
+    margin-left: auto;
+    margin-right: auto;
+    transition: box-shadow 0.2s, border 0.2s;
+  }
+  
+  .match-card:hover {
+    box-shadow: 0 8px 32px rgba(0,181,255,0.18);
+    border-color: #ffffff;
+  }
+  
+  .card-header {
+    border-bottom: 2px solid #00B5FF;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+    color: #00B5FF;
+    font-size: 1.2rem;
+    font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  .teams-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  
+  .team {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.08);
+    min-width: 0;
+  }
+  
+  .team.winner {
+    background: rgba(0, 181, 255, 0.08);
+  }
+  
+  .team.loser {
+    background: rgba(255, 50, 50, 0.08);
+  }
+  
+  .team h4 {
+    margin: 0 0 10px 0;
+    color: #00B5FF;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  
+  .vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700;
+    min-width: 40px;
+  }
+  
+  .player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #22242e;
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  }
+  
+  .player-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .champion {
+    font-weight: bold;
+    color: #00B5FF;
+    font-size: 1.02rem;
+  }
+  
+  .role {
+    font-size: 0.85rem;
+    color: #A0A0A0;
+  }
+  
+  .rank {
+    padding: 4px 14px;
+    border-radius: 14px;
+    font-size: 0.9em;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+    margin-left: 12px;
+    background: #181A20;
+    border: 1.5px solid #ffffff;
+    color: #00B5FF;
+    letter-spacing: 1px;
+  }
+  
+  @media (max-width: 700px) {
+    .teams-container {
+      flex-direction: column;
+      gap: 0;
+    }
+    .vs {
+      margin: 12px 0;
+      font-size: 1.3rem;
+    }
+  }
+  
