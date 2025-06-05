@@ -18,23 +18,26 @@ Aplicação web fullstack para análise de partidas do League of Legends, integr
 
 ### Backend
 
-1. Instale as dependências:
+1. Entre na pasta backend:
 ```
-
-pip install requests
-
-```
-2. Execute o script Python para coletar os dados:
-```
-
-python nome_do_script.py
+cd frontend/backend
 
 ```
-O arquivo `match_data.json` será gerado.
+2. Instale as dependências:
+```
 
-3. (Opcional) Sirva o JSON por uma API Express/Flask, se desejar integração dinâmica com o frontend.
+npm install
+
+```
+3. Execute o servidor:
+```
+
+node server.js
+
+```
 
 ### Frontend
+
 
 1. Instale as dependências:
 ```
@@ -58,8 +61,7 @@ npm start
 
 backend/
 match_data.json
-script_coleta.py
-(outros arquivos do backend)
+server.js
 
 frontend/
 src/
@@ -68,7 +70,6 @@ styles/
 App.jsx
 index.js
 ...
-package.json
 
 ```
 
