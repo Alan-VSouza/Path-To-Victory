@@ -1,0 +1,53 @@
+.predict-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.predict-form input,
+.predict-form select {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.predict-form button {
+  padding: 14px;
+  border: none;
+  background-color: #e63946;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.predict-form button:disabled {
+  background-color: #a33b3b;
+  cursor: not-allowed;
+}
+
+.predict-form button:hover:not(:disabled) {
+  background-color: #c1272d;
+}
+
+.result {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  user-select: none;
+}
+
+.result.win {
+  background-color: rgb(16, 137, 27);
+  color: #ffffff;
+}
+
+.result.lose {
+  background-color: rgb(255, 0, 21);
+  color: #ffffff;
+}
