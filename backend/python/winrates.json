@@ -1,0 +1,20 @@
+{
+  "Renekton": {
+    "games_analisados": 3,
+    "winrate": 0.333,
+    "kda_medio": 1.74,
+    "build_mais_usada": "Sundered Sky;Chainlaced Crushers;Black Cleaver;Sterak's Gage;Eclipse",
+    "bans_recomendados": "Yorick;-1;Caitlyn",
+    "pontos_fortes": "Fatia e dados se destacam em manobras de assediar.Corte, siga com outra habilidade e depois afaste -se de volta à segurança.;Abate os mansos drena uma enorme quantidade de vida quando usados ​​no meio da briga.Você pode usar isso para atrair oponentes para pensar que você é mais fraco do que realmente é.;A redução de recarga é especialmente boa para Renekton, permitindo que ele se acumule rapidamente e use sua fúria.",
+    "pontos_fracos": "Preste muita atenção ao medidor de Fury de Renekton, pois isso geralmente significa quando ele está prestes a atacar.;Renekton de Renekton ser capaz de lutar e ganhar fúria, assediando -o continuamente, reduzirá severamente a eficácia de suas habilidades."
+  },
+  "Sion": {
+    "games_analisados": 2,
+    "winrate": 0.0,
+    "kda_medio": 0.58,
+    "build_mais_usada": "Galeforce;Guardian's Blade;The Collector;Mortal Reminder;Ionian Boots of Lucidity",
+    "bans_recomendados": "-1;Zed;Alistar",
+    "pontos_fortes": "Você só tem uma capacidade de giro muito leve durante ataques imparáveis, por isso, certifique -se de usá -lo em caminhos retos.;O rugido do Slayer é uma ótima capacidade de configuração de conseguir um esmagamento muito poderoso.;O buff do forno da alma exibe quanta força de escudo permanece, use essas informações para cronometrar perfeitamente sua explosão.",
+    "pontos_fracos": "Mesmo que Sion ainda atinja um esmagamento, fazendo -o liberar a acusação reduz anteriormente seu impacto.;Use o tempo depois que Sion morreu para reposicionar e se preparar para seu retorno."
+  }
+}

@@ -1,60 +1,24 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body, html {
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  scroll-behavior: smooth;
   background: url('../images/BackgroundLol.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 
-.home {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.home, main {
+.main-content {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  padding-top: 68px;
+  align-items: flex-start;
+  padding-top: 80px;
+  background: rgba(0,0,0,0.35);
 }
 
-
-.hero {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 40px 30px;
-  border-radius: 15px;
-  max-width: 750px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
-  letter-spacing: 3px;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-  line-height: 1.4;
-}
-
-.hero.no-bg {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  padding: 0 !important;
+@media (max-width: 700px) {
+  .main-content {
+    padding-top: 60px;
+  }
 }

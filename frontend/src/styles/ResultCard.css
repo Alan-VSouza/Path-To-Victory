@@ -1,0 +1,37 @@
+.result-card {
+  background: rgba(0,0,0,0.7);
+  border-radius: 12px;
+  padding: 22px 18px;
+  margin-top: 22px;
+  color: #fff;
+  box-shadow: 0 2px 8px #FFD70022;
+  font-size: 1.08rem;
+}
+
+.result-card h3 {
+  color: #FFD700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.result-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.result-card li {
+  margin-bottom: 6px;
+}
+
+.argumento-ia {
+  margin-top: 12px;
+  color: #00B5FF;
+  font-style: italic;
+}
+
+.result-card.error {
+  color: #ff5050;
+  background: rgba(80,0,0,0.7);
+  border: 1px solid #ff5050;
+}
