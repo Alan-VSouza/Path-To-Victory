@@ -6,4 +6,4 @@ REM Inicia o backend Node.js (Express)
 start cmd /k "cd backend\node && node server.js"
 
 REM Inicia o frontend React
-start cmd /k "cd frontend\path-to-victory-react && npm start"
+start cmd /k "cd frontend && npm start"

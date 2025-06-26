@@ -112,6 +112,9 @@ Acesse em `http://localhost:3000`
 <p align="center">
   <img src="frontend\src\images\Sc3.png" width="70%" alt="About Screenshot"/>
 </p>
+<p align="center">
+  <img src="frontend\src\images\Sc4.png" width="70%" alt="About Screenshot"/>
+</p>
 
 ## 📚 Créditos e agradecimentos
 
