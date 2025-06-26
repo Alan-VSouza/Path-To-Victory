@@ -1,0 +1,416 @@
+[
+  {
+    "match_id": "BR1_3097829846",
+    "teams": {
+      "VENCEDOR": [
+        {
+          "champion": "Sion",
+          "role": "TOP",
+          "rank": "MASTER I",
+          "kda": "7/8/5"
+        },
+        {
+          "champion": "Nidalee",
+          "role": "JUNGLE",
+          "rank": "GRANDMASTER I",
+          "kda": "13/5/5"
+        },
+        {
+          "champion": "Sylas",
+          "role": "MIDDLE",
+          "rank": "MASTER I",
+          "kda": "5/5/7"
+        },
+        {
+          "champion": "Zeri",
+          "role": "BOTTOM",
+          "rank": "GRANDMASTER I",
+          "kda": "4/6/4"
+        },
+        {
+          "champion": "Lulu",
+          "role": "UTILITY",
+          "rank": "MASTER I",
+          "kda": "3/3/19"
+        }
+      ],
+      "PERDEDOR": [
+        {
+          "champion": "Maokai",
+          "role": "TOP",
+          "rank": "MASTER I",
+          "kda": "2/6/11"
+        },
+        {
+          "champion": "Hecarim",
+          "role": "JUNGLE",
+          "rank": "MASTER I",
+          "kda": "12/7/8"
+        },
+        {
+          "champion": "Ryze",
+          "role": "MIDDLE",
+          "rank": "MASTER I",
+          "kda": "4/6/8"
+        },
+        {
+          "champion": "Lucian",
+          "role": "BOTTOM",
+          "rank": "MASTER I",
+          "kda": "8/8/6"
+        },
+        {
+          "champion": "Nami",
+          "role": "UTILITY",
+          "rank": "DIAMOND I",
+          "kda": "1/5/9"
+        }
+      ]
+    }
+  },
+  {
+    "match_id": "BR1_3097807472",
+    "teams": {
+      "VENCEDOR": [
+        {
+          "champion": "Renekton",
+          "role": "TOP",
+          "rank": "DIAMOND I",
+          "kda": "8/11/11"
+        },
+        {
+          "champion": "Viego",
+          "role": "JUNGLE",
+          "rank": "MASTER I",
+          "kda": "12/10/9"
+        },
+        {
+          "champion": "Leblanc",
+          "role": "MIDDLE",
+          "rank": "MASTER I",
+          "kda": "25/7/14"
+        },
+        {
+          "champion": "Ezreal",
+          "role": "BOTTOM",
+          "rank": "MASTER I",
+          "kda": "10/10/19"
+        },
+        {
+          "champion": "Karma",
+          "role": "UTILITY",
+          "rank": "DIAMOND I",
+          "kda": "12/5/34"
+        }
+      ],
+      "PERDEDOR": [
+        {
+          "champion": "Sett",
+          "role": "TOP",
+          "rank": "DIAMOND I",
+          "kda": "13/9/10"
+        },
+        {
+          "champion": "Rammus",
+          "role": "JUNGLE",
+          "rank": "MASTER I",
+          "kda": "6/9/15"
+        },
+        {
+          "champion": "Vex",
+          "role": "MIDDLE",
+          "rank": "MASTER I",
+          "kda": "15/14/8"
+        },
+        {
+          "champion": "Xayah",
+          "role": "BOTTOM",
+          "rank": "DIAMOND I",
+          "kda": "6/23/11"
+        },
+        {
+          "champion": "Rakan",
+          "role": "UTILITY",
+          "rank": "MASTER I",
+          "kda": "3/12/27"
+        }
+      ]
+    }
+  },
+  {
+    "match_id": "BR1_3104755774",
+    "teams": {
+      "VENCEDOR": [
+        {
+          "champion": "Graves",
+          "role": "Invalid",
+          "rank": "UNRANKED",
+          "kda": "26/13/16"
+        },
+        {
+          "champion": "KogMaw",
+          "role": "Invalid",
+          "rank": "BRONZE I",
+          "kda": "14/14/39"
+        },
+        {
+          "champion": "Nunu",
+          "role": "Invalid",
+          "rank": "UNRANKED",
+          "kda": "10/12/41"
+        },
+        {
+          "champion": "Vayne",
+          "role": "Invalid",
+          "rank": "UNRANKED",
+          "kda": "18/14/26"
+        },
+        {
+          "champion": "Orianna",
+          "role": "Invalid",
+          "rank": "GOLD II",
+          "kda": "9/9/45"
+        }
+      ],
+      "PERDEDOR": [
+        {
+          "champion": "Twitch",
+          "role": "Invalid",
+          "rank": "DIAMOND I",
+          "kda": "25/17/22"
+        },
+        {
+          "champion": "Sejuani",
+          "role": "Invalid",
+          "rank": "BRONZE III",
+          "kda": "8/12/23"
+        },
+        {
+          "champion": "Taric",
+          "role": "Invalid",
+          "rank": "UNRANKED",
+          "kda": "2/14/41"
+        },
+        {
+          "champion": "Lux",
+          "role": "Invalid",
+          "rank": "IRON II",
+          "kda": "6/17/36"
+        },
+        {
+          "champion": "Tristana",
+          "role": "Invalid",
+          "rank": "UNRANKED",
+          "kda": "21/17/15"
+        }
+      ]
+    }
+  },
+  {
+    "match_id": "BR1_3104745526",
+    "teams": {
+      "VENCEDOR": [
+        {
+          "champion": "Soraka",
+          "role": "Invalid",
+          "rank": "GOLD II",
+          "kda": "3/2/50"
+        },
+        {
+          "champion": "Vladimir",
+          "role": "Invalid",
+          "rank": "GOLD II",
+          "kda": "28/9/31"
+        },
+        {
+          "champion": "Rell",
+          "role": "Invalid",
+          "rank": "EMERALD IV",
+          "kda": "1/9/59"
+        },
+        {
+          "champion": "Akali",
+          "role": "Invalid",
+          "rank": "UNRANKED",
+          "kda": "13/4/33"
+        },
+        {
+          "champion": "Mel",
+          "role": "Invalid",
+          "rank": "SILVER II",
+          "kda": "23/4/33"
+        }
+      ],
+      "PERDEDOR": [
+        {
+          "champion": "DrMundo",
+          "role": "Invalid",
+          "rank": "DIAMOND I",
+          "kda": "12/12/9"
+        },
+        {
+          "champion": "Katarina",
+          "role": "Invalid",
+          "rank": "BRONZE III",
+          "kda": "3/18/13"
+        },
+        {
+          "champion": "Nautilus",
+          "role": "Invalid",
+          "rank": "UNRANKED",
+          "kda": "3/12/16"
+        },
+        {
+          "champion": "Quinn",
+          "role": "Invalid",
+          "rank": "IRON II",
+          "kda": "5/14/8"
+        },
+        {
+          "champion": "TahmKench",
+          "role": "Invalid",
+          "rank": "UNRANKED",
+          "kda": "5/12/13"
+        }
+      ]
+    }
+  },
+  {
+    "match_id": "BR1_3105163884",
+    "teams": {
+      "VENCEDOR": [
+        {
+          "champion": "Malphite",
+          "role": "TOP",
+          "rank": "MASTER I",
+          "kda": "2/4/2"
+        },
+        {
+          "champion": "Kayn",
+          "role": "JUNGLE",
+          "rank": "MASTER I",
+          "kda": "7/4/6"
+        },
+        {
+          "champion": "Leblanc",
+          "role": "MIDDLE",
+          "rank": "DIAMOND I",
+          "kda": "17/3/2"
+        },
+        {
+          "champion": "Kaisa",
+          "role": "BOTTOM",
+          "rank": "MASTER I",
+          "kda": "15/7/4"
+        },
+        {
+          "champion": "Nautilus",
+          "role": "UTILITY",
+          "rank": "MASTER I",
+          "kda": "2/9/8"
+        }
+      ],
+      "PERDEDOR": [
+        {
+          "champion": "Aurora",
+          "role": "TOP",
+          "rank": "MASTER I",
+          "kda": "8/8/2"
+        },
+        {
+          "champion": "MasterYi",
+          "role": "JUNGLE",
+          "rank": "DIAMOND II",
+          "kda": "12/8/9"
+        },
+        {
+          "champion": "Zilean",
+          "role": "MIDDLE",
+          "rank": "DIAMOND II",
+          "kda": "3/10/8"
+        },
+        {
+          "champion": "Twitch",
+          "role": "BOTTOM",
+          "rank": "MASTER I",
+          "kda": "3/11/10"
+        },
+        {
+          "champion": "Lulu",
+          "role": "UTILITY",
+          "rank": "DIAMOND II",
+          "kda": "1/6/21"
+        }
+      ]
+    }
+  },
+  {
+    "match_id": "BR1_3105146782",
+    "teams": {
+      "VENCEDOR": [
+        {
+          "champion": "Gnar",
+          "role": "TOP",
+          "rank": "DIAMOND I",
+          "kda": "3/9/9"
+        },
+        {
+          "champion": "JarvanIV",
+          "role": "JUNGLE",
+          "rank": "DIAMOND II",
+          "kda": "5/10/15"
+        },
+        {
+          "champion": "Sylas",
+          "role": "MIDDLE",
+          "rank": "DIAMOND I",
+          "kda": "7/9/5"
+        },
+        {
+          "champion": "KogMaw",
+          "role": "BOTTOM",
+          "rank": "MASTER I",
+          "kda": "20/8/6"
+        },
+        {
+          "champion": "Yuumi",
+          "role": "UTILITY",
+          "rank": "MASTER I",
+          "kda": "2/8/24"
+        }
+      ],
+      "PERDEDOR": [
+        {
+          "champion": "Jayce",
+          "role": "TOP",
+          "rank": "MASTER I",
+          "kda": "12/5/4"
+        },
+        {
+          "champion": "Hecarim",
+          "role": "JUNGLE",
+          "rank": "DIAMOND III",
+          "kda": "3/8/18"
+        },
+        {
+          "champion": "Katarina",
+          "role": "MIDDLE",
+          "rank": "DIAMOND II",
+          "kda": "16/4/11"
+        },
+        {
+          "champion": "Lucian",
+          "role": "BOTTOM",
+          "rank": "MASTER I",
+          "kda": "12/10/13"
+        },
+        {
+          "champion": "Alistar",
+          "role": "UTILITY",
+          "rank": "DIAMOND II",
+          "kda": "1/10/22"
+        }
+      ]
+    }
+  }
+]
