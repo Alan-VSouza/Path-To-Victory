@@ -1,61 +1,56 @@
 # 🤖 PathToVictory
 
-**PathToVictory** é uma IA gratuita para League of Legends, focada em partidas Diamante+, que entrega previsões, argumentos, dicas e estatísticas de altíssimo nível para ajudar jogadores a melhorarem seu desempenho em soloQ.
+**PathToVictory** is a free AI tool for League of Legends focused on Diamond+ matches. It delivers win predictions, reasoning, tips and high-level statistics to help players improve in solo queue.
 
-## ✨ O que é o PathToVictory?
+## ✨ What is PathToVictory?
 
-- **Previsão de vitória**: Diga seu campeão, elo e posição e veja a probabilidade de vitória, winrate, KDA médio, builds, pontos fortes/fracos e argumentos automáticos.
-- **Comparação de campeões**: Compare dois campeões na mesma lane e descubra, com dados reais de alto elo, qual compensa mais no meta.
-- **Estatísticas reais**: Dados extraídos de partidas reais de Diamante+, processados por IA e atualizados via pipeline automático.
-- **Frontend moderno**: Interface React responsiva, dark mode, com animações e experiência premium.
-- **Backend robusto**: API Flask + Node para servir previsões e dados, fácil de rodar localmente.
+- **Win prediction:** give your champion, rank and position and see the win probability, win rate, average KDA, builds, strengths and weaknesses, plus automatically generated arguments.
+- **Champion comparison:** compare two champions in the same lane and find out, with real high-elo data, which one is better in the current meta.
+- **Real statistics:** data extracted from real Diamond+ matches, processed by AI and refreshed through an automated pipeline.
+- **Modern front-end:** responsive React interface with dark mode and animations.
+- **Solid back-end:** Flask + Node APIs that serve predictions and data, easy to run locally.
 
+## 🚀 Getting started
 
-## 🚀 Como rodar o projeto
-
-### 1. Clone o repositório
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Alan-VSouza/Path-To-Victory.git
-cd path-to-victory
+cd Path-To-Victory
 ```
 
+### 2. Python back-end (Flask)
 
-### 2. Backend Python (Flask)
-
-#### a) Instale as dependências
+**a) Install the dependencies**
 
 ```bash
 cd backend/python
 pip install -r requirements.txt
 ```
 
+**b) Generate the data and train the model**
 
-#### b) Gere os dados e treine a IA
-
-- Edite `champion_pipeline.py` para os campeões e amostras desejadas.
-- Rode para gerar `champion_stats.csv` e `winrates.json`:
+Edit `champion_pipeline.py` to choose the champions and sample sizes you want, then generate `champion_stats.csv` and `winrates.json`:
 
 ```bash
 python champion_pipeline.py
 ```
 
-- Treine o modelo (se necessário):
+Train the model (if needed):
 
 ```bash
 python train_model.py
 ```
 
-
-#### c) Inicie a API Flask
+**c) Start the Flask API**
 
 ```bash
 python predict_api_dynamic.py
 ```
 
-A API estará disponível em `http://localhost:5001/api/predict` e `/api/compare`.
+The API is available at `http://localhost:5001/api/predict` and `/api/compare`.
 
-### 3. Backend Node (opcional, para servir match_data.json)
+### 3. Node back-end (optional, serves match_data.json)
 
 ```bash
 cd ../node
@@ -63,9 +58,9 @@ npm install
 npm start
 ```
 
-Acesse em `http://localhost:5000/api/match_results`
+Open `http://localhost:5000/api/match_results`.
 
-### 4. Frontend React
+### 4. React front-end
 
 ```bash
 cd ../../frontend/path-to-victory-react
@@ -73,56 +68,50 @@ npm install
 npm start
 ```
 
-Acesse em `http://localhost:3000`
+Open `http://localhost:3000`.
 
-## 🧠 Como foi feito
+## 🧠 How it works
 
-- **Pipeline de dados**: Python coleta partidas Diamante+ via Riot API, calcula winrate, KDA, builds, banimentos sugeridos, pontos fortes/fracos (traduzidos automaticamente!), e salva tudo pronto para o backend.
-- **Machine Learning**: Modelo RandomForest treinado com features de campeão, posição, elo, KDA, etc. para prever vitória/derrota.
-- **Backend Flask**: Servindo previsões, argumentos e comparações de campeões via API REST.
-- **Frontend React**: UI moderna, responsiva, com formulários, cards de resultado, animações e dark mode.
-- **Estilo**: Gradientes, sombras, responsividade e animações para experiência premium.
-- **Comparação**: Mensagens inteligentes que destacam o campeão mais vantajoso com base nos dados reais.
+- **Data pipeline:** Python collects Diamond+ matches through the Riot API, computes win rate, KDA, builds, suggested bans and strengths/weaknesses (automatically translated), and saves everything ready for the back-end.
+- **Machine learning:** a RandomForest model trained on champion, position, rank and KDA features predicts wins and losses.
+- **Flask back-end:** serves predictions, arguments and champion comparisons through a REST API.
+- **React front-end:** modern, responsive UI with forms, result cards, animations and dark mode.
+- **Comparison:** smart messages highlight the champion with the advantage based on real data.
 
+## 🎯 Goals
 
-## 🎯 Intuito do projeto
+- Make high-level statistics and predictions available to every LoL player.
+- Explain, clearly and with arguments, the reason behind each recommendation.
+- Encourage better solo queue decisions based on real data, not guesses.
+- Be easy to run locally and serve as a base for studying applied AI in games.
 
-- Democratizar estatísticas e previsões de alto nível para jogadores de LoL.
-- Mostrar, de forma clara e argumentativa, o "porquê" de cada escolha.
-- Incentivar decisões melhores em soloQ com dados reais, não achismo.
-- Ser fácil de rodar localmente e servir de base para estudos de IA aplicada a games.
-
-
-## 🛠️ Tecnologias
+## 🛠️ Tech stack
 
 - **Python** (pandas, scikit-learn, Flask, googletrans)
 - **Node.js** (Express)
-- **React** (Hooks, CSS moderno)
-- **Riot API** \& **Data Dragon**
-
+- **React** (Hooks, modern CSS)
+- **Riot API** and **Data Dragon**
 
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="frontend\src\images\Sc1.png" width="70%" alt="Predict Screenshot"/>
+  <img src="frontend/src/images/Sc1.png" width="70%" alt="Predict screenshot"/>
 </p>
 <p align="center">
-  <img src="frontend\src\images\Sc2.png" width="70%" alt="Compare Screenshot"/>
+  <img src="frontend/src/images/Sc2.png" width="70%" alt="Compare screenshot"/>
 </p>
 <p align="center">
-  <img src="frontend\src\images\Sc3.png" width="70%" alt="About Screenshot"/>
+  <img src="frontend/src/images/Sc3.png" width="70%" alt="About screenshot"/>
 </p>
 
-## 📚 Créditos e agradecimentos
+## 📚 Credits
 
-- Dados: Riot Games API, Data Dragon
-- Inspiração: LoLalytics, Mobalytics, u.gg
+- Data: Riot Games API, Data Dragon
+- Inspiration: LoLalytics, Mobalytics, u.gg
 
-
-## 📝 Licença
+## 📝 License
 
 MIT
 
-> **PathToVictory** — IA e dados para quem quer evoluir no LoL de verdade!
-> Sinta-se livre para contribuir, sugerir melhorias ou usar como base para seu próprio projeto.
-
+> **PathToVictory**: AI and data for players who want to genuinely improve at LoL.
+> Feel free to contribute, suggest improvements or use it as a base for your own project.
