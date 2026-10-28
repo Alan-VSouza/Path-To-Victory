@@ -33,11 +33,11 @@ pip install -r requirements.txt
 
 #### b) Gere os dados e treine a IA
 
-- Edite `champion_pipeline_simple.py` para os campeões e amostras desejadas.
+- Edite `champion_pipeline.py` para os campeões e amostras desejadas.
 - Rode para gerar `champion_stats.csv` e `winrates.json`:
 
 ```bash
-python champion_pipeline_simple.py
+python champion_pipeline.py
 ```
 
 - Treine o modelo (se necessário):
