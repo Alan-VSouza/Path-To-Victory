@@ -58,11 +58,6 @@ export default function ResultCard({ result }) {
             <b>Banimentos sugeridos:</b> {formatList(result.bans_recomendados)}
           </li>
         )}
-        {show(result.ajustes_build) && (
-          <li>
-            <b>Dicas:</b> {formatList(result.ajustes_build)}
-          </li>
-        )}
         {show(result.estatisticas?.kda_medio) && (
           <li>
             <b>KDA médio:</b> {result.estatisticas.kda_medio}

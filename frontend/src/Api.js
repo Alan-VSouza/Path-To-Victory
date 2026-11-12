@@ -1,5 +1,7 @@
-export async function predictChampion(data) {
-  const response = await fetch("http://localhost:5001/api/predict", {
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5001/api";
+
+async function post(path, data, fallbackError) {
+  const response = await fetch(`${API_URL}${path}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -8,24 +10,12 @@ export async function predictChampion(data) {
   const json = await response.json();
 
   if (!response.ok) {
-    throw new Error(json.error || "Erro desconhecido ao prever");
+    throw new Error(json.error || fallbackError);
   }
 
   return json;
 }
 
-export async function compareChampions(data) {
-  const response = await fetch("http://localhost:5001/api/compare", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
+export const predictChampion = (data) => post("/predict", data, "Erro desconhecido ao prever");
 
-  const json = await response.json();
-
-  if (!response.ok) {
-    throw new Error(json.error || "Erro desconhecido ao comparar");
-  }
-
-  return json;
-}
+export const compareChampions = (data) => post("/compare", data, "Erro desconhecido ao comparar");

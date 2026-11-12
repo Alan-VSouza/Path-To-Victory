@@ -2,10 +2,19 @@ import React, { useState } from "react";
 import { compareChampions } from "../Api";
 import "../styles/CompareForm.css";
 
+const winrateOf = (result, champ) => {
+    const value = result?.[champ]?.winrate;
+    return typeof value === "number" ? value : null;
+};
+
+const formatWinrate = (value) => (value === null ? "sem dados para essa posição" : `${(value * 100).toFixed(1)}%`);
+
 function getComparisonMessage(result, champ1, champ2) {
-    if (!result || !result[champ1] || !result[champ2]) return null;
-    const w1 = result[champ1]?.winrate ?? 0;
-    const w2 = result[champ2]?.winrate ?? 0;
+    const w1 = winrateOf(result, champ1);
+    const w2 = winrateOf(result, champ2);
+    if (w1 === null || w2 === null) {
+        return "Não há dados suficientes dos dois campeões nessa posição para comparar.";
+    }
     if (w1 === w2) return "Ambos os campeões têm o mesmo winrate.";
     const melhor = w1 > w2 ? champ1 : champ2;
     const winrate = ((w1 > w2 ? w1 : w2) * 100).toFixed(1);
@@ -77,10 +86,10 @@ export default function CompareForm() {
                 <>
                     <div className="compare-result">
                         <div>
-                            <strong>{champion1}:</strong> Winrate: {(result[champion1]?.winrate * 100).toFixed(1)}%
+                            <strong>{champion1}:</strong> Winrate: {formatWinrate(winrateOf(result, champion1))}
                         </div>
                         <div>
-                            <strong>{champion2}:</strong> Winrate: {(result[champion2]?.winrate * 100).toFixed(1)}%
+                            <strong>{champion2}:</strong> Winrate: {formatWinrate(winrateOf(result, champion2))}
                         </div>
                     </div>
                     <div className="compare-argument">

@@ -48,7 +48,9 @@ python train_model.py
 python predict_api_dynamic.py
 ```
 
-The API is available at `http://localhost:5001/api/predict` and `/api/compare`.
+The API is available at `http://localhost:5001/api/predict` and `/api/compare`. The Werkzeug debugger is off by default; set `FLASK_DEBUG=1` only for local debugging (never on a public server).
+
+> **About the bundled data:** the `champion_stats.csv` and model committed to this repository are a small **sample** (55 champion/position rows with 1–3 matches each) so the app runs out of the box. Win rates from such small samples are not meaningful: run the pipeline above with your own Riot API key to collect a real dataset and retrain the model.
 
 ### 3. Node back-end (optional, serves match_data.json)
 
@@ -63,12 +65,12 @@ Open `http://localhost:5000/api/match_results`.
 ### 4. React front-end
 
 ```bash
-cd ../../frontend/path-to-victory-react
+cd ../../frontend
 npm install
 npm start
 ```
 
-Open `http://localhost:3000`.
+Open `http://localhost:3000`. To point the front-end at another API, set `REACT_APP_API_URL` (default: `http://localhost:5001/api`).
 
 ## 🧠 How it works
 
@@ -95,7 +97,7 @@ Open `http://localhost:3000`.
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="frontend/src/images/Sc1.png" width="70%" alt="Predict screenshot"/>
+  <img src="docs/screenshots/prediction.png" width="70%" alt="Prediction result (sample data)"/>
 </p>
 <p align="center">
   <img src="frontend/src/images/Sc2.png" width="70%" alt="Compare screenshot"/>

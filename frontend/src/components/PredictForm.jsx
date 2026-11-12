@@ -19,6 +19,23 @@ export default function PredictForm() {
     { value: "UTILITY", label: "Suporte" },
   ];
 
+  // Only ranks the bundled model was trained with (see columns.pkl); "" sends no rank.
+  const ranks = [
+    { value: "", label: "Elo (opcional)" },
+    { value: "GRANDMASTER I", label: "Grão-Mestre" },
+    { value: "MASTER I", label: "Mestre" },
+    { value: "DIAMOND I", label: "Diamante I" },
+    { value: "DIAMOND II", label: "Diamante II" },
+    { value: "DIAMOND III", label: "Diamante III" },
+    { value: "EMERALD IV", label: "Esmeralda IV" },
+    { value: "GOLD II", label: "Ouro II" },
+    { value: "SILVER II", label: "Prata II" },
+    { value: "BRONZE I", label: "Bronze I" },
+    { value: "BRONZE III", label: "Bronze III" },
+    { value: "IRON II", label: "Ferro II" },
+    { value: "UNRANKED", label: "Sem ranque" },
+  ];
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -56,6 +73,13 @@ export default function PredictForm() {
           {roles.map(pos => (
             <option key={pos.value} value={pos.value} disabled={pos.value === ""}>
               {pos.label}
+            </option>
+          ))}
+        </select>
+        <select value={rank} onChange={e => setRank(e.target.value)} aria-label="Elo">
+          {ranks.map(r => (
+            <option key={r.value} value={r.value}>
+              {r.label}
             </option>
           ))}
         </select>
