@@ -1,9 +1,15 @@
-flask
-flask_cors
-pandas
-joblib
-requests
-scikit-learn
+# The bundled model (random_forest_model.pkl / scaler.pkl) was trained with scikit-learn 1.7.0:
+# keep this version or retrain with train_model.py after upgrading it.
+scikit-learn==1.7.0
+numpy==2.5.4
+scipy==1.18.1
+pandas==3.1.1
+joblib==1.6.0
+Flask==3.1.3
+flask-cors==6.0.5
+requests==2.34.2
+tqdm==4.70.1
+ratelimit==2.2.1
+
+# Only used by champion_pipeline.py to translate champion tips.
 googletrans==4.0.0-rc1
-tqdm
-ratelimit

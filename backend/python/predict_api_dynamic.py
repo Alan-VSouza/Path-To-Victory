@@ -1,3 +1,5 @@
+import os
+
 from flask_cors import CORS
 from flask import Flask, request, jsonify
 import pandas as pd
@@ -60,6 +62,8 @@ def predict():
     meta_insight       = safe_str(s.get("meta_insight"))
 
     return jsonify({
+        "champion": s["champion"],
+        "role": role,
         "vencedor": pred,
         "winrate": winrate,
         "sample_size": sample_size,
@@ -74,8 +78,8 @@ def predict():
         },
         "meta_insight": meta_insight,
         "explicacao": (
-            f"Sua escolha de {champ} {role} tem winrate de "
-            f"{(winrate*100) if winrate is not None else '–'}% em "
+            f"Sua escolha de {s['champion']} {role} tem winrate de "
+            f"{f'{winrate * 100:.1f}' if winrate is not None else '–'}% em "
             f"{sample_size if sample_size is not None else '–'} partidas."
         )
     })
@@ -103,4 +107,6 @@ def compare():
     return jsonify({c1: lookup(c1), c2: lookup(c2)})
 
 if __name__ == "__main__":
-    app.run(port=5001, debug=True)
+    # The Werkzeug debugger allows remote code execution: only enable it explicitly for local work.
+    debug = os.environ.get("FLASK_DEBUG", "0") == "1"
+    app.run(port=int(os.environ.get("PORT", "5001")), debug=debug)
