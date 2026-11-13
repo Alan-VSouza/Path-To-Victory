@@ -97,14 +97,19 @@ Open `http://localhost:3000`. To point the front-end at another API, set `REACT_
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/prediction.png" width="70%" alt="Prediction result (sample data)"/>
+  <img src="docs/screenshots/prediction.png" width="85%" alt="Prediction result (sample data)"/>
 </p>
 <p align="center">
-  <img src="frontend/src/images/Sc2.png" width="70%" alt="Compare screenshot"/>
+  <img src="docs/screenshots/compare.png" width="85%" alt="Champion comparison"/>
 </p>
 <p align="center">
-  <img src="frontend/src/images/Sc3.png" width="70%" alt="About screenshot"/>
+  <img src="docs/screenshots/about.png" width="85%" alt="About page"/>
 </p>
+<p align="center">
+  <img src="docs/screenshots/prediction-mobile.png" width="30%" alt="Prediction on mobile"/>
+</p>
+
+> Champion portraits and splash art are loaded from Riot's Data Dragon CDN. PathToVictory isn't endorsed by Riot Games.
 
 ## 📚 Credits
 

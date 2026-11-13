@@ -1,105 +1,117 @@
 import React, { useState } from "react";
 import { compareChampions } from "../Api";
-import "../styles/CompareForm.css";
+import { roleLabel } from "../champions";
+import { ChampionInput } from "./ChampionPicker";
+import RoleSelect from "./RoleSelect";
+import Backdrop from "./Backdrop";
+import { formatPercent } from "./WinrateRing";
+import { InfoIcon, SwordsIcon } from "./Icons";
 
 const winrateOf = (result, champ) => {
-    const value = result?.[champ]?.winrate;
-    return typeof value === "number" ? value : null;
+  const value = result?.[champ]?.winrate;
+  return typeof value === "number" ? value : null;
 };
 
-const formatWinrate = (value) => (value === null ? "sem dados para essa posição" : `${(value * 100).toFixed(1)}%`);
-
-function getComparisonMessage(result, champ1, champ2) {
-    const w1 = winrateOf(result, champ1);
-    const w2 = winrateOf(result, champ2);
-    if (w1 === null || w2 === null) {
-        return "Não há dados suficientes dos dois campeões nessa posição para comparar.";
-    }
-    if (w1 === w2) return "Ambos os campeões têm o mesmo winrate.";
-    const melhor = w1 > w2 ? champ1 : champ2;
-    const winrate = ((w1 > w2 ? w1 : w2) * 100).toFixed(1);
-    return `O campeão ${melhor} compensa mais pois tem maior winrate de ${winrate}%`;
+function verdictOf(w1, w2, name1, name2) {
+  if (w1 === null || w2 === null) {
+    return "Não há dados suficientes dos dois campeões nessa posição para comparar.";
+  }
+  if (w1 === w2) return "Os dois campeões têm o mesmo winrate nessa posição.";
+  const best = w1 > w2 ? name1 : name2;
+  return `${best} compensa mais: winrate de ${formatPercent(Math.max(w1, w2))} contra ${formatPercent(Math.min(w1, w2))}.`;
 }
 
-export default function CompareForm() {
-    const [champion1, setChampion1] = useState("");
-    const [champion2, setChampion2] = useState("");
-    const [position, setPosition] = useState("");
-    const [result, setResult] = useState(null);
-    const [loading, setLoading] = useState(false);
+export default function CompareForm({ champions }) {
+  const [champion1, setChampion1] = useState("");
+  const [champion2, setChampion2] = useState("");
+  const [position, setPosition] = useState("");
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [formError, setFormError] = useState("");
 
-    const roles = [
-        { value: "", label: "Selecione a posição" },
-        { value: "TOP", label: "Topo" },
-        { value: "JUNGLE", label: "Selva" },
-        { value: "MIDDLE", label: "Meio" },
-        { value: "BOTTOM", label: "Atirador" },
-        { value: "UTILITY", label: "Suporte" },
-    ];
+  const m1 = champions.find(champion1);
+  const m2 = champions.find(champion2);
 
-    async function handleCompare(e) {
-        e.preventDefault();
-        setLoading(true);
-        setResult(null);
-        try {
-            const res = await compareChampions({ champion1, champion2, position });
-            setResult(res);
-        } catch {
-            setResult({ error: "Erro ao comparar." });
-        }
-        setLoading(false);
+  async function handleCompare(e) {
+    e.preventDefault();
+    if (!position) {
+      setFormError("Escolha a posição para comparar.");
+      return;
     }
+    setFormError("");
+    setLoading(true);
+    setResult(null);
+    const sides = [
+      { key: m1 ? m1.id : champion1.trim(), name: m1?.name ?? champion1.trim() },
+      { key: m2 ? m2.id : champion2.trim(), name: m2?.name ?? champion2.trim() },
+    ];
+    try {
+      const res = await compareChampions({ champion1: sides[0].key, champion2: sides[1].key, position });
+      setResult({ data: res, sides, position });
+    } catch {
+      setResult({ error: "Não foi possível comparar agora. Verifique se a API está rodando." });
+    }
+    setLoading(false);
+  }
 
-    return (
-        <div className="compare-form-container">
-            <form className="compare-form" onSubmit={handleCompare}>
-                <input
-                    type="text"
-                    placeholder="Campeão 1"
-                    value={champion1}
-                    onChange={e => setChampion1(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Campeão 2"
-                    value={champion2}
-                    onChange={e => setChampion2(e.target.value)}
-                    required
-                />
-                <select
-                    value={position}
-                    onChange={e => setPosition(e.target.value)}
-                    required
-                >
-                    {roles.map(pos => (
-                        <option key={pos.value} value={pos.value} disabled={pos.value === ""}>
-                            {pos.label}
-                        </option>
-                    ))}
-                </select>
-                <button type="submit" disabled={loading}>
-                    {loading ? "Comparando..." : "Comparar"}
-                </button>
-            </form>
-            {result && !result.error && (
-                <>
-                    <div className="compare-result">
-                        <div>
-                            <strong>{champion1}:</strong> Winrate: {formatWinrate(winrateOf(result, champion1))}
-                        </div>
-                        <div>
-                            <strong>{champion2}:</strong> Winrate: {formatWinrate(winrateOf(result, champion2))}
-                        </div>
-                    </div>
-                    <div className="compare-argument">
-                        {getComparisonMessage(result, champion1, champion2)}
-                    </div>
-                </>
-            )}
-            {result && result.error && (
-                <div className="compare-result error">{result.error}</div>
-            )}
+  const w = result?.data ? result.sides.map((s) => winrateOf(result.data, s.key)) : [];
+  const leader = w.length && w[0] !== null && w[1] !== null && w[0] !== w[1] ? (w[0] > w[1] ? 0 : 1) : -1;
+
+  return (
+    <div className="page">
+      <Backdrop src={m1 ? champions.splash(m1.id) : m2 ? champions.splash(m2.id) : null} />
+      <header className="page-header">
+        <span className="eyebrow">
+          <SwordsIcon size={14} /> Comparar campeões
+        </span>
+        <h1>Qual dos dois rende mais na sua rota?</h1>
+        <p>Coloque dois campeões frente a frente na mesma posição e veja quem tem o melhor winrate nas partidas analisadas.</p>
+      </header>
+
+      <form className="panel compare-form" onSubmit={handleCompare}>
+        <div className="versus-row">
+          <ChampionInput id="cmp-1" label="Campeão 1" value={champion1} onChange={setChampion1} champions={champions} placeholder="Ex.: Renekton" />
+          <span className="vs-badge">VS</span>
+          <ChampionInput id="cmp-2" label="Campeão 2" value={champion2} onChange={setChampion2} champions={champions} placeholder="Ex.: Gnar" />
         </div>
-    );
+        <RoleSelect value={position} onChange={setPosition} />
+        {formError && <div className="alert">{formError}</div>}
+        <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
+          {loading ? "Comparando..." : "Comparar"}
+        </button>
+      </form>
+
+      {result?.error && <div className="panel result-error">{result.error}</div>}
+
+      {result?.data && (
+        <section className="compare-result" aria-label="Resultado da comparação">
+          <div className="duel">
+            {result.sides.map((side, i) => (
+              <div key={side.key} className={`duel-card ${leader === i ? "leader" : ""}`}>
+                <div className="duel-art" style={{ backgroundImage: `url(${champions.splash(side.key)})` }} />
+                <div className="duel-body">
+                  {leader === i && <span className="leader-badge">Melhor escolha</span>}
+                  <div className="row">
+                    {champions.icon(side.key) && <img className="duel-portrait" src={champions.icon(side.key)} alt="" />}
+                    <div>
+                      <h3>{side.name}</h3>
+                      <span className="muted">{roleLabel(result.position)}</span>
+                    </div>
+                  </div>
+                  <div className="duel-value">{w[i] === null ? "sem dados para essa posição" : formatPercent(w[i])}</div>
+                  <div className="bar">
+                    <span style={{ width: `${(w[i] ?? 0) * 100}%` }} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="argument">
+            <InfoIcon size={18} />
+            <p>{verdictOf(w[0], w[1], result.sides[0].name, result.sides[1].name)}</p>
+          </div>
+        </section>
+      )}
+    </div>
+  );
 }
