@@ -1,5 +1,9 @@
 # 🤖 PathToVictory
 
+[![Live demo](https://img.shields.io/badge/Live%20demo-pathtovictory--demo--alan.netlify.app-e8b64c?style=for-the-badge&logo=netlify&logoColor=white)](https://pathtovictory-demo-alan.netlify.app)
+
+> The demo has no Flask server: it serves the model's answers precomputed for every champion, role and rank in the dataset (`backend/python/export_demo_data.py`).
+
 **PathToVictory** is a free AI tool for League of Legends focused on Diamond+ matches. It delivers win predictions, reasoning, tips and high-level statistics to help players improve in solo queue.
 
 ## ✨ What is PathToVictory?
